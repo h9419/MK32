@@ -297,7 +297,7 @@ void scan_matrix(void)
 				if (MATRIX_STATE[row][col] != curState)
 				{
 					MATRIX_STATE[row][col] = curState;
-					ESP_LOGI(GPIO_TAG, "row %d col %d pressed state %d", MATRIX_ROWS_PINS[row], MATRIX_COLS_PINS[col], curState);
+					// ESP_LOGI(GPIO_TAG, "row %d col %d pressed state %d", MATRIX_ROWS_PINS[row], MATRIX_COLS_PINS[col], curState);
 				}
 			}
 		}
@@ -325,7 +325,7 @@ void scan_matrix(void)
 				if (MATRIX_STATE[row][col] != curState)
 				{
 					MATRIX_STATE[row][col] = curState;
-					ESP_LOGI(GPIO_TAG, "row %d col %d pressed state %d", MATRIX_ROWS_PINS[row], MATRIX_COLS_PINS[col], curState);
+					// ESP_LOGI(GPIO_TAG, "row %d col %d pressed state %d", MATRIX_ROWS_PINS[row], MATRIX_COLS_PINS[col], curState);
 				}
 			}
 		}
