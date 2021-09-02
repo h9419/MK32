@@ -141,6 +141,7 @@ extern "C" void battery_reports(void *pvParameters)
 	}
 }
 
+int mouse_speed = 15;
 //How to handle key reports
 extern "C" void key_reports(void *pvParameters)
 {
