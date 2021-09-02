@@ -274,7 +274,7 @@ uint8_t *check_key_state(uint16_t **keymap) {
 					//checking if macro was released
 					if ((keycode >= MACRO_BASE_VAL)
 							&& (keycode <= LAYER_HOLD_BASE_VAL)) {
-						for (uint8_t i = 0; i < 3; i++) {
+						for (uint8_t i = 0; i < MACRO_LEN; i++) {
 							uint16_t key = macros[MACRO_BASE_VAL - keycode][i];
 							current_report[REPORT_LEN - 1 - i] = 0;
 							modifier &= ~check_modifier(key);
