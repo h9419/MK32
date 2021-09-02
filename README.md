@@ -1,10 +1,9 @@
 # MK32 - Simple BLE keyboard for ESP32
 
-dungphan90's fork:
-- Updated to ESP-IDF v4.4.
-- Migrated to CMake build system.
-- Added Docker to avoid dependency mess.
-- Added keyboard config and layout for "CatiONE OLKB" (https://github.com/dungphan90/OLKBBLE.git).
+h9419's fork:
+- Fixed initialzation of GPIO34-39
+- Fixed mouse keys
+- Configured for full-sized Ducky One
 
 ### Easy build process with Docker.
 ```
