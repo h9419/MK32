@@ -37,7 +37,7 @@
 #include "driver/rtc_io.h"
 #include "driver/touch_pad.h"
 #include "esp_timer.h"
-#include "esp_sleep.h"
+#include "esp_sleep.h".
 #include "esp_pm.h"
 
 //HID Ble functions
@@ -141,7 +141,7 @@ extern "C" void battery_reports(void *pvParameters)
 	}
 }
 
-int mouse_speed = 15;
+uint8_t mouse_speed = 16;
 //How to handle key reports
 extern "C" void key_reports(void *pvParameters)
 {
@@ -209,14 +209,18 @@ extern "C" void key_reports(void *pvParameters)
 							mouse_state[3] = -1;
 							break;
 						case KC_MS_ACCEL0:
-							mouse_speed = 15; // reset
+							mouse_speed = mouse_speed >> 1;
+							if (mouse_speed == 0)
+								mouse_speed = 1;
 							break;
 						case KC_MS_ACCEL1:
-							mouse_speed += (mouse_speed >> 2); // multiply 1.25
+							mouse_speed = mouse_speed << 1;
+							if (mouse_speed == 128)
+								mouse_speed = 64;
 							break;
-						case KC_MS_ACCEL2:
-							mouse_speed -= (mouse_speed >> 2); // multiply 0.75
-							break;
+						// case KC_MS_ACCEL2:
+						// 	mouse_speed = 16;
+						// 	break;
 						}
 					}
 					else
